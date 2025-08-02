@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Chonburi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --fontsize: 16px;
+  --color: rgb(0, 0, 0);
+  --header-base: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: var(--fontsize);
+  color: var(--color);
+}
+
+/* Header sizes using calc() to multiply base size by an increasing factor */
+h1 {
+  font-size: calc(var(--fontsize) * (var(--header-base) * 2.5));
+}
+
+h2 {
+  font-size: calc(var(--fontsize) * (var(--header-base) * 2));
+}
+
+h3 {
+  font-size: calc(var(--fontsize) * (var(--header-base) * 1.75));
+}
+
+h4 {
+  font-size: calc(var(--fontsize) * var(--header-base));
+}
+
+h5 {
+  font-size: calc(var(--fontsize) * (var(--header-base) * 0.875));
+}
+
+h6 {
+  font-size: calc(var(--fontsize) * (var(--header-base) * 0.75));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  /* A tighter line height for headers */
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  /* Space below headers */
+  font-weight: bold;
+  color: var(--color);
+  font-family: "Chonburi", serif;
+  font-weight: 800;
+  font-style: normal;
+  /* Assuming headers should have the same color defined in :root */
+}
+
+/* Set up Consistent Styles, Using variables  */
+
+header {
+  font-family: "Chonburi", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 2px solid red;
+  background-image: url("Images/Mars Inc.jpg");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  height: 400px;
+}
+
+.logo,
+nav,
+.header-button {
+  flex-grow: 1;
+  /* Allow these items to grow if there's extra space */
+  flex-basis: 0;
+  /* Start from an equal base */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4vw;
+}
+
+nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--color);
+  font-weight: 900;
+  text-shadow: 2px 2px 1px rgb(255, 255, 255), -2px -2px 1px rgb(255, 255, 255);
+}
+
+nav a:hover {
+  color: rgb(199, 125, 86);
+  background-color: rgba(0, 0, 0, 0.341);
+  border-radius: 15px;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.header-button {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.header-button-text {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 12vw;
+  height: 10vh;
+  border-radius: 15px;
+  background-color: rgb(199, 125, 86);
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  padding: 15px 32px;
+  --fontsize: 1rem;
+  font-size: var(--fontsize);
+}
+
+button:hover {
+  background-color: beige;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    font-family: "Chonburi", serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    border: 2px solid red;
+  }
+
+  .logo,
+  nav,
+  .header-button {
+    flex-grow: 1;
+    /* Allow these items to grow if there's extra space */
+    flex-basis: 0;
+    /* Start from an equal base */
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+  }
+  nav a:hover {
+    color: rgb(199, 125, 86);
+    background-color: rgba(0, 0, 0, 0.341);
+    border-radius: 15px;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+  }
+
+  .header-button {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-button-text {
+    position: relative;
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid red;
+  }
+
+  button {
+    width: 200px;
+    border-radius: 15px;
+    background-color: rgb(199, 125, 86);
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    height: 5vh;
+    padding: 15px 32px;
+    --fontsize: 20px;
+    font-size: var(--fontsize);
+  }
+
+  button:hover {
+    background-color: rgb(254, 1, 1);
+  }
+}
